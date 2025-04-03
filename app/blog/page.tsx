@@ -6,10 +6,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Blog() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      Blog
-    </div>
-  );
+export default async function Blog() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return <div className="">Blog</div>;
 }
