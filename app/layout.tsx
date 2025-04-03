@@ -28,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
+        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">Footer</footer>
+      </body>
     </html>
   );
 }
