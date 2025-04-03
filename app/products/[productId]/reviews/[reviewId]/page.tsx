@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation';
+import { getRandomInt } from '@/app/_lib/utils';
 
 type PageType = {
   params: Promise<{
@@ -9,6 +10,11 @@ type PageType = {
 
 export default async function Review({ params }: PageType) {
   const { productId, reviewId } = await params;
+  const random = getRandomInt(2);
+
+  if (random === 1) {
+    throw new Error('Error. Random === 1');
+  }
 
   if (parseInt(reviewId) > 1000) {
     // notFound();
