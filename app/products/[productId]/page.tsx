@@ -1,5 +1,21 @@
+import { Metadata } from 'next';
+
 type PageType = {
   params: Promise<{ productId: string }>;
+};
+
+export const generateMetadata = async ({ params }: PageType): Promise<Metadata> => {
+  const id = (await params).productId;
+  // Call to the catalog API
+  const title = await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`iPhone ${id}`);
+    });
+  });
+
+  return {
+    title: `Product ${title}`,
+  };
 };
 
 export default async function PDP({ params }: PageType) {
