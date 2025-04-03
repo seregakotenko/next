@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 type PageType = {
   params: Promise<{
@@ -11,7 +11,9 @@ export default async function Review({ params }: PageType) {
   const { productId, reviewId } = await params;
 
   if (parseInt(reviewId) > 1000) {
-    notFound();
+    // notFound();
+
+    redirect(`/products`);
   }
 
   return (

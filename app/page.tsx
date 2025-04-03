@@ -11,6 +11,12 @@ export default function Home() {
         <li className="">
           <Link href="/products">Products</Link>
         </li>
+        <li className="">
+          <Link href="/articles/news?lang=en">News on Eng</Link>
+        </li>
+        <li className="">
+          <Link href="/articles/news?lang=fr">News on French</Link>
+        </li>
       </ol>
     </div>
   );
