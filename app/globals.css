@@ -33,6 +33,12 @@ a.active {
   color: var(--color-blue-400) !important;
 }
 
+button {
+  border: 1px solid var(--foreground);
+  background-color: var(--color-gray-200);
+  padding: 4px 10px;
+}
+
 input {
   border: 1px solid var(--foreground);
 }
