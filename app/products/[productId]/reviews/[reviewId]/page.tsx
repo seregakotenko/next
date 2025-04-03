@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
-import { getRandomInt } from '@/app/_lib/utils';
+import { getRandomError } from '@/app/_lib/utils';
 
 type PageType = {
   params: Promise<{
@@ -9,12 +9,8 @@ type PageType = {
 };
 
 export default async function Review({ params }: PageType) {
+  getRandomError();
   const { productId, reviewId } = await params;
-  const random = getRandomInt(2);
-
-  if (random === 1) {
-    throw new Error('Error. Random === 1');
-  }
 
   if (parseInt(reviewId) > 1000) {
     // notFound();
@@ -23,7 +19,7 @@ export default async function Review({ params }: PageType) {
   }
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="">
       Review {reviewId} for product {productId}
     </div>
   );
